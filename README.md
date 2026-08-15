@@ -97,3 +97,10 @@ npm start
 
 **This is not just a tool. This is the future of AI.**
 
+## S+ readiness
+
+This repository is maintained under an additive, provenance-preserving quality rubric. See `SPLUS.md`, `SECURITY.md`, `LICENSE-STATUS.md`, and `docs/PROVENANCE.md` for boundaries and validation guidance. This status does not claim production correctness, legal clearance, or security certification.
+
+## Install and usage
+
+This repository may contain executable components, examples, benchmarks, or archived material. Use the native dependency manifest and project-specific instructions for the active component. For a non-runtime archive, inspect the documented provenance and evidence boundaries before treating files as executable.
