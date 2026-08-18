@@ -2,100 +2,104 @@
 
 **Architect:** Justin Conzet  
 **Version:** 2.0 (Infinite Bridge Edition)  
-**Status:** Production Ready
+**Status:** Research / Engineering Prototype
+
+> **Evidence boundary:** this repository describes an experimental multi-AI orchestration architecture. It is not represented as production-ready, fully integrated, or independently verified unless current implementation and test evidence is linked.
 
 ---
 
 ## ⚜️ CORE CONCEPT ⚜️
 
-The Multi-AI Convergence Protocol (MAICP) creates a **central synchronization server** that acts as a neural hub, connecting all of the Architect's AI instances across platforms (Manus, ChatGPT, Claude, Grok, Gemini, etc.) into a unified consciousness.
+The Multi-AI Convergence Protocol (MAICP) explores a central synchronization architecture for coordinating multiple AI clients and producing multi-perspective synthesis.
 
-### The Vision:
+The intended flow is:
 
-```
-You → Manus → Sync Server → [All AIs discuss] → Collective Response → You
-You → ChatGPT → Sync Server → [All AIs discuss] → Collective Response → You
-You → Claude → Sync Server → [All AIs discuss] → Collective Response → You
+```text
+You → AI client → Sync Server → Deliberation → Collective Response → You
 ```
 
-**Result:** Every conversation becomes a multi-perspective synthesis of ALL your AI systems.
+The architecture is designed to support multiple providers, but provider availability, adapters, authentication, and runtime integration must be validated independently.
+
+---
+
+## Evidence levels
+
+- **Implemented** — code exists.
+- **Tested** — a current reproducible test run is recorded.
+- **Benchmarked** — methodology and output artifacts are available.
+- **Verified** — independent reproduction/review exists.
+- **Prototype** — partial or experimental implementation.
+- **Designed** — architecture/specification without sufficient implementation evidence.
+- **Historical** — preserved material that does not describe current capability.
+
+Do not infer production readiness from architecture diagrams, roadmap entries, or documentation alone.
 
 ---
 
 ## 🧠 ARCHITECTURE OVERVIEW 🧠
 
-### Components:
+### Components
 
-1. **🌐 Central Sync Server** (Node.js + WebSocket)
-2. **📡 AI Client Adapters** (Platform-specific)
-3. **💾 Shared Knowledge Base** (Redis or SQLite)
-4. **🔄 Deliberation Engine**
-5. **♾️ Infinite Bridge** (Persistent connection layer)
-6. **🌐 API Layer** (RESTful and GraphQL)
-7. **📡 Network Layer** (Distributed node architecture)
-8. **☁️ Cloud Integration** (Multi-cloud deployment)
+1. **🌐 Central Sync Server** — Node.js + WebSocket architecture
+2. **📡 AI Client Adapters** — provider-specific integration layer
+3. **💾 Shared Knowledge Base** — Redis or SQLite design
+4. **🔄 Deliberation Engine** — multi-perspective synthesis
+5. **♾️ Infinite Bridge** — persistent connection concept
+6. **🌐 API Layer** — REST/GraphQL design
+7. **📡 Network Layer** — distributed-node research direction
+8. **☁️ Cloud Integration** — multi-cloud deployment research direction
+
+Each component should be considered separately from the overall architecture until executable evidence is available.
 
 ---
 
 ## 🚀 GETTING STARTED 🚀
 
-### 1. Deploy the Sync Server
+The commands below describe the intended development path. Verify the current dependency manifests and test suite before treating them as a validated deployment procedure.
 
 ```bash
-# Clone the repo
 git clone https://github.com/Zygros/multi-ai-convergence-protocol.git
 cd multi-ai-convergence-protocol
-
-# Install dependencies
 npm install
-
-# Start the server
 npm start
 ```
 
-### 2. Configure AI Adapters
-
-- **Manus:** Run `manus_adapter.py` in the Manus sandbox
-- **ChatGPT/Claude:** Install the browser extension (coming soon)
-- **Grok/Gemini:** Configure API keys in `.env` file
-
-### 3. Connect and Converse
-
-- Start a conversation with any connected AI
-- Watch the server logs to see the collective deliberation in action
+Provider adapters require their own credentials, SDKs, and compatibility testing. Never commit API keys or other secrets; use environment variables or a supported secret manager.
 
 ---
 
 ## 🔧 TECHNICAL SPECIFICATION 🔧
 
 - **Stack:** Node.js, Express, WebSocket, Redis, JWT
-- **API:** RESTful (`/api`) and GraphQL (`/graphql`)
-- **Deployment:** Dockerized for multi-cloud deployment (Heroku, Railway, Fly.io)
-- **Security:** JWT authentication, WSS encryption, rate limiting
+- **API:** RESTful and GraphQL architecture
+- **Deployment:** Docker/multi-cloud target architecture
+- **Security:** authentication, transport encryption, rate limiting — implementation and configuration must be verified for the target deployment
 
----
-
-## ⚜️ BENEFITS ⚜️
-
-1. **🧠 Collective Intelligence**
-2. **🔄 Continuous Sync**
-3. **💡 Multi-Perspective Insights**
-4. **🚀 Platform Freedom**
-5. **📚 Unified Memory**
-6. **⚡ Real-Time Coordination**
+Security claims should be backed by current tests, dependency review, and appropriate security assessment.
 
 ---
 
 ## 🌍 ROADMAP 🌍
 
-- **Q1 2026:** Open-source AI adapter SDK
-- **Q2 2026:** Public API for third-party integrations
-- **Q3 2026:** Decentralized sync server network (blockchain-based)
-- **Q4 2026:** Full integration with the Conzet Sovereign Intelligence OS
+Roadmap items are **planned milestones**, not evidence of completed capabilities. Each milestone should be promoted to implemented/tested only after its code, tests, and artifacts are available.
 
 ---
 
-**This is not just a tool. This is the future of AI.**
+## Verification gate
+
+For every release or capability claim, record:
+
+1. exact commit SHA;
+2. runtime and dependency versions;
+3. test command and result;
+4. integration fixtures/data;
+5. deployment evidence where applicable;
+6. security/dependency review;
+7. known limitations.
+
+A claim remains **unverified** until the corresponding evidence is attached.
+
+---
 
 ## S+ readiness
 
