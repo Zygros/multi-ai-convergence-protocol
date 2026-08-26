@@ -5,6 +5,7 @@ const express = require('express');
 const http = require('http');
 const WebSocket = require('ws');
 const cors = require('cors');
+const helmet = require('helmet');
 const { v4: uuidv4 } = require('uuid');
 
 const app = express();
@@ -12,6 +13,7 @@ const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
 // Middleware
+app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
