@@ -16,7 +16,7 @@ jobs:
           set -euo pipefail
           if find . -type f -name '*.py' -not -path './.git/*' -print -quit | grep -q .; then python -m compileall -q . -x '(^|/)(.git|venv|.venv|node_modules)/'; if [ -f requirements.txt ]; then python -m pip install -r requirements.txt; fi; if [ -f pyproject.toml ] || [ -d tests ] || [ -d test ]; then python -m pip install pytest; python -m pytest -q; fi; else echo 'No Python source detected.'; fi
       - name: Node audit
-        run: if [ -f package.json ]; then if [ -f package-lock.json ]; then npm ci; else npm install; fi; if find . -path './node_modules' -prune -o -path './.git' -prune -o -type f \\( -path '*/__tests__/*.[jt]s' -o -path '*/__tests__/*.[jt]sx' -o -name '*.test.[jt]s' -o -name '*.test.[jt]sx' -o -name '*.spec.[jt]s' -o -name '*.spec.[jt]sx' \\) -print -quit | grep -q .; then npm test --if-present; else echo 'No Jest test files detected; test step skipped, not passed. Build remains enforced.'; fi; npm run build --if-present; else echo 'No Node package detected.'; fi
+        run: if [ -f package.json ]; then if [ -f package-lock.json ]; then npm ci; else npm install; fi; if find . -path './node_modules' -prune -o -path './.git' -prune -o -type f \( -path '*/__tests__/*.[jt]s' -o -path '*/__tests__/*.[jt]sx' -o -name '*.test.[jt]s' -o -name '*.test.[jt]sx' -o -name '*.spec.[jt]s' -o -name '*.spec.[jt]sx' \) -print -quit | grep -q .; then npm test --if-present; else echo 'No Jest test files detected; test step skipped, not passed. Build remains enforced.'; fi; npm run build --if-present; else echo 'No Node package detected.'; fi
       - name: Go audit
         run: if [ -f go.mod ]; then go test ./...; else echo 'No Go module detected.'; fi
       - name: Rust audit
